@@ -11,6 +11,7 @@ class ConversationVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("NhanTT13")
         // Do any additional setup after loading the view.
     }
 
