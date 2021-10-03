@@ -8,6 +8,7 @@ target 'MessengerV2' do
 # Message 
 
 pod 'MessageKit'
+pod 'JGProgressHUD'
 
   # Pods for MessengerV2
 
