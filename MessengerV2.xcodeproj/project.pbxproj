@@ -19,6 +19,8 @@
 		AABF1DE42709AD6200B817BF /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABF1DE32709AD6200B817BF /* RegisterVC.swift */; };
 		AABF1DE62709AD7900B817BF /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABF1DE52709AD7900B817BF /* ProfileVC.swift */; };
 		AABF1DE82709AD8B00B817BF /* NewConversationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABF1DE72709AD8B00B817BF /* NewConversationVC.swift */; };
+		AABF1DEA2709B02B00B817BF /* Chat.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABF1DE92709B02B00B817BF /* Chat.swift */; };
+		AABF1DEC2709B03400B817BF /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABF1DEB2709B03400B817BF /* Model.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,8 @@
 		AABF1DE32709AD6200B817BF /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
 		AABF1DE52709AD7900B817BF /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		AABF1DE72709AD8B00B817BF /* NewConversationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewConversationVC.swift; sourceTree = "<group>"; };
+		AABF1DE92709B02B00B817BF /* Chat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chat.swift; sourceTree = "<group>"; };
+		AABF1DEB2709B03400B817BF /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +124,7 @@
 		AABF1DD62709AC6200B817BF /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				AABF1DEB2709B03400B817BF /* Model.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -127,6 +132,7 @@
 		AABF1DD72709AC6D00B817BF /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				AABF1DE92709B02B00B817BF /* Chat.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -222,10 +228,12 @@
 				AABF1DE82709AD8B00B817BF /* NewConversationVC.swift in Sources */,
 				AABF1DC32709AA6200B817BF /* ConversationVC.swift in Sources */,
 				AABF1DDD2709ACFE00B817BF /* VideoPlayerVC.swift in Sources */,
+				AABF1DEA2709B02B00B817BF /* Chat.swift in Sources */,
 				AABF1DE22709AD5600B817BF /* LoginVC.swift in Sources */,
 				AABF1DBF2709AA6200B817BF /* AppDelegate.swift in Sources */,
 				AABF1DE62709AD7900B817BF /* ProfileVC.swift in Sources */,
 				AABF1DE42709AD6200B817BF /* RegisterVC.swift in Sources */,
+				AABF1DEC2709B03400B817BF /* Model.swift in Sources */,
 				AABF1DDF2709AD2600B817BF /* PhotoViewerVC.swift in Sources */,
 				AABF1DC12709AA6200B817BF /* SceneDelegate.swift in Sources */,
 			);
