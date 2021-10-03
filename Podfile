@@ -5,6 +5,10 @@ target 'MessengerV2' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
 
+# Message 
+
+pod 'MessageKit'
+
   # Pods for MessengerV2
 
 end
