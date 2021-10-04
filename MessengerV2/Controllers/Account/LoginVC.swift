@@ -12,6 +12,7 @@ import GoogleSignIn
 
 class LoginVC: UIViewController {
     
+   
     
     //MARK: - object View
     //imageView
@@ -206,6 +207,7 @@ class LoginVC: UIViewController {
             return
         }
         
+        Constant.progressHUD.show(in: view)
         //Firebase login
         FirebaseAuth.Auth.auth().signIn(withEmail: email, password: password, completion: { [weak self] authResult, error in
             
@@ -294,6 +296,7 @@ extension LoginVC: LoginButtonDelegate {
             let credential = FacebookAuthProvider.credential(withAccessToken: token)
             print("Credential", credential)
             
+            Constant.progressHUD.show(in: self.view)
             FirebaseAuth.Auth.auth().signIn(with: credential, completion:  { [weak self] authResults, error in
                 
                 guard let strongSelf = self else{
