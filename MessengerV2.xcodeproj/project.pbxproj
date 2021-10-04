@@ -19,10 +19,14 @@
 		AABF1DE22709AD5600B817BF /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABF1DE12709AD5600B817BF /* LoginVC.swift */; };
 		AABF1DE42709AD6200B817BF /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABF1DE32709AD6200B817BF /* RegisterVC.swift */; };
 		AABF1DE62709AD7900B817BF /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABF1DE52709AD7900B817BF /* ProfileVC.swift */; };
-		AABF1DE82709AD8B00B817BF /* NewConversationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABF1DE72709AD8B00B817BF /* NewConversationVC.swift */; };
 		AABF1DEA2709B02B00B817BF /* Chat.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABF1DE92709B02B00B817BF /* Chat.swift */; };
 		AABF1DEC2709B03400B817BF /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABF1DEB2709B03400B817BF /* Model.swift */; };
 		AABF1DEE2709F9D500B817BF /* Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABF1DED2709F9D500B817BF /* Extentions.swift */; };
+		AABF1DF02709FB2800B817BF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AABF1DEF2709FB2800B817BF /* GoogleService-Info.plist */; };
+		AABF1DF22709FC2700B817BF /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABF1DF12709FC2700B817BF /* Constants.swift */; };
+		AABF1DF42709FC8500B817BF /* ChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABF1DF32709FC8500B817BF /* ChatVC.swift */; };
+		AABF1DF62709FD1D00B817BF /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABF1DF52709FD1D00B817BF /* DatabaseManager.swift */; };
+		AABF1DF8270A02A500B817BF /* NewConversationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABF1DF7270A02A500B817BF /* NewConversationVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,10 +45,14 @@
 		AABF1DE12709AD5600B817BF /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		AABF1DE32709AD6200B817BF /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
 		AABF1DE52709AD7900B817BF /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
-		AABF1DE72709AD8B00B817BF /* NewConversationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewConversationVC.swift; sourceTree = "<group>"; };
 		AABF1DE92709B02B00B817BF /* Chat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chat.swift; sourceTree = "<group>"; };
 		AABF1DEB2709B03400B817BF /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		AABF1DED2709F9D500B817BF /* Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extentions.swift; sourceTree = "<group>"; };
+		AABF1DEF2709FB2800B817BF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		AABF1DF12709FC2700B817BF /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		AABF1DF32709FC8500B817BF /* ChatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatVC.swift; sourceTree = "<group>"; };
+		AABF1DF52709FD1D00B817BF /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
+		AABF1DF7270A02A500B817BF /* NewConversationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewConversationVC.swift; sourceTree = "<group>"; };
 		EE7CE90E23AE76CC8F420C71 /* Pods-MessengerV2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MessengerV2.release.xcconfig"; path = "Target Support Files/Pods-MessengerV2/Pods-MessengerV2.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -104,6 +112,7 @@
 				AABF1DD32709AC3400B817BF /* Controllers */,
 				AABF1DD52709AC5100B817BF /* Views */,
 				AABF1DCC2709AA6500B817BF /* Info.plist */,
+				AABF1DEF2709FB2800B817BF /* GoogleService-Info.plist */,
 			);
 			path = MessengerV2;
 			sourceTree = "<group>";
@@ -114,6 +123,7 @@
 				AABF1DBE2709AA6200B817BF /* AppDelegate.swift */,
 				AABF1DC02709AA6200B817BF /* SceneDelegate.swift */,
 				AABF1DED2709F9D500B817BF /* Extentions.swift */,
+				AABF1DF52709FD1D00B817BF /* DatabaseManager.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -125,7 +135,8 @@
 				AABF1DE02709AD3000B817BF /* Account */,
 				AABF1DD92709ACAA00B817BF /* Media */,
 				AABF1DE52709AD7900B817BF /* ProfileVC.swift */,
-				AABF1DE72709AD8B00B817BF /* NewConversationVC.swift */,
+				AABF1DF32709FC8500B817BF /* ChatVC.swift */,
+				AABF1DF7270A02A500B817BF /* NewConversationVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -152,6 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				AABF1DEB2709B03400B817BF /* Model.swift */,
+				AABF1DF12709FC2700B817BF /* Constants.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -194,6 +206,7 @@
 				AABF1DB82709AA6200B817BF /* Frameworks */,
 				AABF1DB92709AA6200B817BF /* Resources */,
 				2088FD4A31ADBCE50F395348 /* [CP] Embed Pods Frameworks */,
+				C09AEC94C93553B77696EB4E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -242,6 +255,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AABF1DCB2709AA6500B817BF /* LaunchScreen.storyboard in Resources */,
+				AABF1DF02709FB2800B817BF /* GoogleService-Info.plist in Resources */,
 				AABF1DC82709AA6500B817BF /* Assets.xcassets in Resources */,
 				AABF1DC62709AA6200B817BF /* Main.storyboard in Resources */,
 			);
@@ -265,6 +279,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MessengerV2/Pods-MessengerV2-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C09AEC94C93553B77696EB4E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MessengerV2/Pods-MessengerV2-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MessengerV2/Pods-MessengerV2-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MessengerV2/Pods-MessengerV2-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E56F864661BF76F4041BB00E /* [CP] Check Pods Manifest.lock */ = {
@@ -296,16 +327,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AABF1DE82709AD8B00B817BF /* NewConversationVC.swift in Sources */,
 				AABF1DC32709AA6200B817BF /* ConversationVC.swift in Sources */,
+				AABF1DF62709FD1D00B817BF /* DatabaseManager.swift in Sources */,
 				AABF1DDD2709ACFE00B817BF /* VideoPlayerVC.swift in Sources */,
 				AABF1DEA2709B02B00B817BF /* Chat.swift in Sources */,
 				AABF1DE22709AD5600B817BF /* LoginVC.swift in Sources */,
 				AABF1DBF2709AA6200B817BF /* AppDelegate.swift in Sources */,
 				AABF1DE62709AD7900B817BF /* ProfileVC.swift in Sources */,
+				AABF1DF22709FC2700B817BF /* Constants.swift in Sources */,
+				AABF1DF42709FC8500B817BF /* ChatVC.swift in Sources */,
 				AABF1DE42709AD6200B817BF /* RegisterVC.swift in Sources */,
 				AABF1DEE2709F9D500B817BF /* Extentions.swift in Sources */,
 				AABF1DEC2709B03400B817BF /* Model.swift in Sources */,
+				AABF1DF8270A02A500B817BF /* NewConversationVC.swift in Sources */,
 				AABF1DDF2709AD2600B817BF /* PhotoViewerVC.swift in Sources */,
 				AABF1DC12709AA6200B817BF /* SceneDelegate.swift in Sources */,
 			);
