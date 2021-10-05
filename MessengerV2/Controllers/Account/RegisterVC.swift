@@ -251,10 +251,34 @@ class RegisterVC: UIViewController {
                 }
     //            let newUser = result.user
     //            print("Successfull Create User ", newUser)
-                DatabaseManager.shared.insertUser(with: ChatAppUser(emailAddress: email,
-                                                                    firstName: firstName,
-                                                                    lastName: lastName,
-                                                                    password: password))
+//                DatabaseManager.shared.insertUser(with: ChatAppUser(emailAddress: email,
+//                                                                    firstName: firstName,
+//                                                                    lastName: lastName,
+//                                                                    password: password))
+                let chatUser = ChatAppUser(emailAddress: email,
+                                           firstName: firstName,
+                                           lastName: lastName,
+                                           password: password)
+                DatabaseManager.shared.insertUser(with: chatUser) { success in
+                    if success {
+                        //upload image
+                        guard let image = strongSelf.imageView.image,
+                              let data = image.pngData() else {
+                            return
+                        }
+                        let fileName = chatUser.profilePictureFileName
+                        StorageManager.shared.uploadProfilePicture(with: data,
+                                                                   fileName: fileName) { result in
+                            switch result {
+                            case .success(let downloadUrl):
+                                UserDefaults.standard.set(downloadUrl, forKey: "profile_picture_url")
+                                print(downloadUrl)
+                            case .failure(let error):
+                                print("StorageManagerError ", error)
+                            }
+                        }
+                    }
+                }
                 
                 strongSelf.navigationController?.dismiss(animated: true, completion: nil)
             })

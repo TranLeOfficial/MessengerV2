@@ -214,7 +214,9 @@ class LoginVC: UIViewController {
             guard let strongSelf = self else {
                 return
             }
-            
+            DispatchQueue.main.async {
+                Constant.progressHUD.dismiss()
+            }
             guard let result = authResult, error == nil else {
                 print("Error login ...")
                 return
@@ -261,7 +263,7 @@ extension LoginVC: LoginButtonDelegate {
         }
         
         let facebookRequest = FBSDKLoginKit.GraphRequest(graphPath: "me",
-                                                         parameters: ["fields": "email, name"],
+                                                         parameters: ["fields": "email, first_name, last_name, picture.type(large)"],
                                                          tokenString: token,
                                                          version: nil,
                                                          httpMethod: .get)
@@ -272,24 +274,69 @@ extension LoginVC: LoginButtonDelegate {
             }
             print("\(result)")
             
-            guard let userName = result["name"] as? String,
-                  let email = result["email"] as? String else {
+            guard let firstName = result["first_name"] as? String,
+                  let lastname = result["last_name"] as? String,
+                  let email = result["email"] as? String,
+                  let picture = result["picture"] as? [String: Any],
+                  let data = picture["data"] as? [String: Any],
+                  let pictureUrl = data["url"] as? String else {
                 print("Failed to get email and name from fb result")
                 return
             }
-            let nameComponents = userName.components(separatedBy: " ")
-            guard nameComponents.count == 2 else {
-                return
-            }
-            let firstName = nameComponents[0]
-            let lastName = nameComponents[1]
+            
+//            let nameComponents = userName.components(separatedBy: " ")
+//            guard nameComponents.count == 2 else {
+//                return
+//            }
+//            let firstName = nameComponents[0]
+//            let lastName = nameComponents[1]
             
             DatabaseManager.shared.userExists(with: email, completion: { exists in
                 if !exists {
-                    DatabaseManager.shared.insertUser(with: ChatAppUser(emailAddress: email,
-                                                                        firstName: firstName,
-                                                                        lastName: lastName,
-                                                                        password: ""))
+//                    DatabaseManager.shared.insertUser(with: ChatAppUser(emailAddress: email,
+//                                                                        firstName: firstName,
+//                                                                        lastName: lastName,
+//                                                                        password: ""))
+                    let chatUser = ChatAppUser(emailAddress: email,
+                                               firstName: firstName,
+                                               lastName: lastname,
+                                               password: "")
+                    
+                    
+                    
+                    DatabaseManager.shared.insertUser(with: chatUser) { success in
+                        if success {
+                            
+                            guard let url = URL(string: pictureUrl) else {
+                                return
+                            }
+                            
+                            print("Download data from Facebook")
+                            
+                            URLSession.shared.dataTask(with: url) { data, _, _ in
+                                guard let data = data else {
+                                    print("Failed to get data From Facebook")
+                                    return
+                                }
+                                
+                                print("Got data From facebook...")
+                                
+                                //upload image
+                                let fileName = chatUser.profilePictureFileName
+                                StorageManager.shared.uploadProfilePicture(with: data,
+                                                                           fileName: fileName) { result in
+                                    switch result {
+                                    case .success(let downloadUrl):
+                                        UserDefaults.standard.set(downloadUrl, forKey: "profile_picture_url")
+                                        print(downloadUrl)
+                                    case .failure(let error):
+                                        print("StorageManagerError ", error)
+                                    }
+                                }
+                            }.resume()
+                            
+                        }
+                    }
                 }
             })
             
@@ -301,6 +348,9 @@ extension LoginVC: LoginButtonDelegate {
                 
                 guard let strongSelf = self else{
                     return
+                }
+                DispatchQueue.main.async {
+                    Constant.progressHUD.dismiss()
                 }
                 guard authResults != nil, error == nil else {
                     if let error = error {

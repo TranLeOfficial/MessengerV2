@@ -80,10 +80,45 @@ extension AppDelegate: GIDSignInDelegate {
         DatabaseManager.shared.userExists(with: email, completion: { exists in
             if !exists {
                 //insert to database
-                DatabaseManager.shared.insertUser(with: ChatAppUser(emailAddress: email,
-                                                                    firstName: firstName,
-                                                                    lastName: lastName,
-                                                                    password: ""))
+//                DatabaseManager.shared.insertUser(with: ChatAppUser(emailAddress: email,
+//                                                                    firstName: firstName,
+//                                                                    lastName: lastName,
+//                                                                    password: ""))
+                let chatUser = ChatAppUser(emailAddress: email,
+                                           firstName: firstName,
+                                           lastName: lastName,
+                                           password: "")
+                DatabaseManager.shared.insertUser(with: chatUser) { sucess in
+                    if sucess {
+                        
+                        if user.profile.hasImage {
+                            guard let url = user.profile.imageURL(withDimension: 200) else {
+                                return
+                            }
+                            
+                            URLSession.shared.dataTask(with: url) { data, _, _ in
+                                guard let data = data else {
+                                    return
+                                }
+                                
+                                //upload image
+                                let fileName = chatUser.profilePictureFileName
+                                StorageManager.shared.uploadProfilePicture(with: data,
+                                                                           fileName: fileName) { result in
+                                    switch result {
+                                    case .success(let downloadUrl):
+                                        UserDefaults.standard.set(downloadUrl, forKey: "profile_picture_url")
+                                        print(downloadUrl)
+                                    case .failure(let error):
+                                        print("StorageManagerError ", error)
+                                    }
+                                }
+                            }.resume()
+                        }
+                        
+                        
+                    }
+                }
             }
         })
         
