@@ -10,7 +10,7 @@ import JGProgressHUD
 
 struct Constant {
     
-    static let progressHUD = JGProgressHUD(style: .dark)
+    static let progressHUD = JGProgressHUD(style: .light)
     
     //MARK: - Title
     static let register = "Register"
