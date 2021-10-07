@@ -131,7 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				AABF1DC22709AA6200B817BF /* ConversationVC.swift */,
-				AABF1DE02709AD3000B817BF /* Account */,
+				AABF1DE02709AD3000B817BF /* Login */,
 				AABF1DD92709ACAA00B817BF /* Media */,
 				AABF1DE52709AD7900B817BF /* ProfileVC.swift */,
 				AABF1DF32709FC8500B817BF /* ChatVC.swift */,
@@ -185,13 +185,13 @@
 			path = Media;
 			sourceTree = "<group>";
 		};
-		AABF1DE02709AD3000B817BF /* Account */ = {
+		AABF1DE02709AD3000B817BF /* Login */ = {
 			isa = PBXGroup;
 			children = (
 				AABF1DE12709AD5600B817BF /* LoginVC.swift */,
 				AABF1DE32709AD6200B817BF /* RegisterVC.swift */,
 			);
-			path = Account;
+			path = Login;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
